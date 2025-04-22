@@ -1,4 +1,4 @@
-import { loadGLTF } from "https://cdn.jsdelivr.net/npm/mind-ar@1.1.4/dist/utils/loader.js";
+//import { loadGLTF } from "https://cdn.jsdelivr.net/npm/mind-ar@1.1.4/dist/utils/loader.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
   const mindarThree = new window.MINDAR.IMAGE.MindARThree({
