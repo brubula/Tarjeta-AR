@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const { renderer, scene, camera } = mindarThree;
   const anchor = mindarThree.addAnchor(0);
 
-  const model = await loadGLTF("https://drive.google.com/uc?export=download&id=1593XYhAY0Ka1mw6o0h7gefoTquFi9bTQ");
+  const model = await loadGLTF("https://www.dropbox.com/scl/fi/sh5drkjpak17r7x8jyk5w/pikachu.glb?rlkey=67wfl8kchv3mcuxmto69sb08i&st=bymih60i&raw=1");
   model.scene.scale.set(0.1, 0.1, 0.1);
   model.scene.position.set(0, 0, 0);
   anchor.group.add(model.scene);
