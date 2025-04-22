@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <title>Tarjeta AR - Demo</title>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.136.0/build/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.1.4/dist/mindar-image-three.prod.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.136.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.1.4/dist/utils/loader.js"></script>
     <script src="./js/app.js" defer></script>
     <style>
       html, body { margin: 0; padding: 0; overflow: hidden; height: 100%; }
@@ -19,6 +20,7 @@
         padding: 10px 20px;
         border-radius: 10px;
         font-family: sans-serif;
+        z-index: 10;
       }
       .link-button {
         margin-top: 10px;
@@ -35,7 +37,7 @@
     <div id="ar-container">
       <div class="overlay">
         Kauz • Desarrollador Web & AR <br />
-        <a class="link-button" href="http://instagram.com/brubula/" target="_blank">Visítame</a>
+        <a class="link-button" href="instagram.com/brubula/" target="_blank">Visítame</a>
       </div>
     </div>
   </body>
