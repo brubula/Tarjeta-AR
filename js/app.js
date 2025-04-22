@@ -1,21 +1,20 @@
-//import { loadGLTF } from "https://cdn.jsdelivr.net/npm/mind-ar@1.1.4/dist/mindar-image-three.prod.js";
+import { loadGLTF } from "https://cdn.jsdelivr.net/npm/mind-ar@1.1.4/dist/utils/loader.js";
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
   const mindarThree = new window.MINDAR.IMAGE.MindARThree({
     container: document.querySelector("#ar-container"),
     imageTargetSrc: "./assets/targets.mind",
   });
 
   const { renderer, scene, camera } = mindarThree;
-
   const anchor = mindarThree.addAnchor(0);
-  const plane = new THREE.Mesh(
-    new THREE.PlaneGeometry(1, 0.75),
-    new THREE.MeshBasicMaterial({ color: 0x00ff00, opacity: 0.5, transparent: true })
-  );
-  anchor.group.add(plane);
 
-  mindarThree.start();
+  const model = await loadGLTF("./models/pikachu.glb");
+  model.scene.scale.set(0.1, 0.1, 0.1);
+  model.scene.position.set(0, 0, 0);
+  anchor.group.add(model.scene);
+
+  await mindarThree.start();
   renderer.setAnimationLoop(() => {
     renderer.render(scene, camera);
   });
